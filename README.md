@@ -15,4 +15,4 @@ https://risadadegatooficial.github.io/mauzinabio/
 
 ---
 
-Criado por Maurice (MauZi) 🎸
+Criado por Mauricio Borghetti Baréa 🎸
