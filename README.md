@@ -4,7 +4,7 @@ Um link na bio moderno criado com HTML e Tailwind CSS.
 
 ## 🚀 Acesse
 
-https://risadadegatooficial.io/mauzinabio/
+https://risadadegatooficial.github.io/mauzinabio/
 
 ## ✨ Características
 
