@@ -61,26 +61,28 @@
             background-repeat: no-repeat;
             position: absolute;
             inset: 0;
-            z-index: 0;
+            width: 100%;
+            height: 100%;
         }
 
         /* Overlay escuro para garantir leitura */
-        .bg-overlay {
+         .bg-overlay {
             background: linear-gradient(to bottom, 
-                rgba(5, 5, 5, 0.3) 0%, 
-                rgba(5, 5, 5, 0.6) 50%, 
-                rgba(5, 5, 5, 0.9) 100%
+                rgba(5, 5, 5, 0.2) 0%, 
+                rgba(5, 5, 5, 0.5) 50%, 
+                rgba(5, 5, 5, 0.8) 100%
             );
             position: absolute;
             inset: 0;
-            z-index: 1;
+            width: 100%;
+            height: 100%;
         }
 
         .glass {
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .text-gradient {
@@ -89,17 +91,18 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* Brilhos suaves */
         .bg-glow-1 {
-            background: radial-gradient(circle, rgba(96, 165, 250, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
         }
 
         .bg-glow-2 {
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
         }
 
         .card-hover:hover {
-            border-color: rgba(168, 85, 247, 0.6);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border-color: rgba(168, 85, 247, 0.5);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
             transform: translateY(-5px);
             background: rgba(0, 0, 0, 0.85);
         }
@@ -119,10 +122,19 @@
 <body class="font-sans antialiased">
 
     <!-- Background Effects -->
-    <div class="fixed inset-0 z-0 pointer-events-none">
-        <div class="absolute top-[-10%] left-[-10%] w-[80vw] h-[80vw] bg-glow-1 animate-pulse-slow"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[70vw] h-[70vw] bg-glow-2 animate-pulse-slow" style="animation-delay: 4s;"></div>
-        <div class="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <!-- 1. Imagem de Fundo -->
+        <div class="bg-main-image opacity-100"></div>
+        
+        <!-- 2. Camada de Contraste -->
+        <div class="bg-overlay"></div>
+        
+        <!-- 3. Brilhos Atmosféricos -->
+        <div class="absolute top-[-20%] left-[-10%] w-[100vw] h-[100vw] bg-glow-1 animate-pulse-slow"></div>
+        <div class="absolute bottom-[-20%] right-[-10%] w-[90vw] h-[90vw] bg-glow-2 animate-pulse-slow" style="animation-delay: 4s;"></div>
+        
+        <!-- 4. Textura de Poeira -->
+        <div class="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
     </div>
 
     <!-- Main Content -->
@@ -277,21 +289,10 @@
     <script>
         // Inicializa os ícones do Lucide
         lucide.createIcons();
-
-        // Pequeno efeito de mouse parallax no background
-        document.addEventListener('mousemove', (e) => {
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            const glows = document.querySelectorAll('.bg-glow-1, .bg-glow-2');
-            glows.forEach((glow, index) => {
-                const speed = (index + 1) * 20;
-                glow.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-            });
-        });
     </script>
 </body>
 </html>
+
 
 
 
