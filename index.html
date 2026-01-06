@@ -50,27 +50,32 @@
             background-color: #050505;
             color: #ffffff;
             overflow-x: hidden;
+            min-height: 100vh;
         }
         /* --- ALTERE A URL DA IMAGEM ABAIXO PARA MUDAR O FUNDO --- */
         .bg-main-image {
             background-image: url('fundodapagina.jpeg'); 
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             background-attachment: fixed;
-            transition: transform 0.1s ease-out;
+            width: 100%;
+            height: 100%;
         }
 
         /* Overlay escuro para garantir leitura e dar o clima neon */
         .bg-overlay {
-            background: radial-gradient(circle at center, rgba(5, 5, 5, 0.2) 0%, rgba(5, 5, 5, 0.8) 100%);
-            background-color: rgba(0, 0, 0, 0.3);
-        }
+            background: linear-gradient(to bottom, 
+                rgba(5, 5, 5, 0.4) 0%, 
+                rgba(5, 5, 5, 0.7) 50%, 
+                rgba(5, 5, 5, 0.9) 100%
+            );
 
         .glass {
-            background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .text-gradient {
@@ -80,17 +85,18 @@
         }
 
         .bg-glow-1 {
-            background: radial-gradient(circle, rgba(96, 165, 250, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.08) 0%, transparent 70%);
         }
 
         .bg-glow-2 {
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
         }
 
         .card-hover:hover {
-            border-color: rgba(168, 85, 247, 0.4);
-            box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.9);
+            border-color: rgba(168, 85, 247, 0.6);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             transform: translateY(-5px);
+            background: rgba(0, 0, 0, 0.85);
         }
 
         ::-webkit-scrollbar {
@@ -281,6 +287,7 @@
     </script>
 </body>
 </html>
+
 
 
 
