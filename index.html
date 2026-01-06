@@ -45,31 +45,36 @@
         }
     </script>
 
-    <style>
+<style>
         body {
             background-color: #050505;
             color: #ffffff;
             overflow-x: hidden;
             min-height: 100vh;
         }
-        /* --- ALTERE A URL DA IMAGEM ABAIXO PARA MUDAR O FUNDO --- */
+
+        /* --- IMAGEM DE FUNDO PRINCIPAL --- */
         .bg-main-image {
             background-image: url('fundodapagina.jpeg'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            inset: 0;
+            z-index: 0;
         }
 
-        /* Overlay escuro para garantir leitura e dar o clima neon */
+        /* Overlay escuro para garantir leitura */
         .bg-overlay {
             background: linear-gradient(to bottom, 
-                rgba(5, 5, 5, 0.4) 0%, 
-                rgba(5, 5, 5, 0.7) 50%, 
+                rgba(5, 5, 5, 0.3) 0%, 
+                rgba(5, 5, 5, 0.6) 50%, 
                 rgba(5, 5, 5, 0.9) 100%
             );
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
 
         .glass {
             background: rgba(0, 0, 0, 0.75);
@@ -287,6 +292,7 @@
     </script>
 </body>
 </html>
+
 
 
 
