@@ -51,6 +51,20 @@
             color: #ffffff;
             overflow-x: hidden;
         }
+        /* --- ALTERE A URL DA IMAGEM ABAIXO PARA MUDAR O FUNDO --- */
+        .bg-main-image {
+            background-image: url('fundodapagina.jpeg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Overlay escuro para garantir leitura e dar o clima neon */
+        .bg-overlay {
+            background: radial-gradient(circle at center, rgba(5, 5, 5, 0.3) 0%, rgba(5, 5, 5, 0.85) 100%);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
 
         .glass {
             background: rgba(255, 255, 255, 0.03);
@@ -267,6 +281,7 @@
     </script>
 </body>
 </html>
+
 
 
 
